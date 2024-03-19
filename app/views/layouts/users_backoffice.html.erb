@@ -23,7 +23,8 @@
           </form>
           <div class="dropdown text-end">
             <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+              <i class="fa-solid fa-user"></i>
+              <%= current_user.email %>
             </a>
             <ul class="dropdown-menu text-small">
               <li><a class="dropdown-item" href="#">Sign out</a></li>
@@ -49,9 +50,9 @@
         </ul>
         <hr>
         <div class="dropdown">
-          <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-            <strong>mdo</strong>
+          <a href="#" class="d-flex gap-2 align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user"></i>
+            <strong><%= current_user.email %></strong>
           </a>
           <ul class="dropdown-menu text-small shadow">
             <li><a class="dropdown-item" href="#">Sign out</a></li>
