@@ -45,15 +45,12 @@ gem 'devise'
 gem 'rails-i18n',  '~> 7.0.0'
 gem 'tty-spinner'
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-bootstrap'
-  gem 'rails-assets-jquery'
-  gem 'rails-assets-notifyjs'
-  gem 'rails-assets-font-awesome'
-end
-
+gem "bootstrap", "~> 5.2.0"
 # Use Sass to process CSS
 gem "sassc-rails"
+
+gem "font-awesome-sass"
+gem 'htmlbeautifier'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
