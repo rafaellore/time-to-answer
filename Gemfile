@@ -44,11 +44,11 @@ gem "bootsnap", require: false
 gem 'devise'
 gem 'rails-i18n',  '~> 7.0.0'
 gem 'tty-spinner'
-
 gem "bootstrap", "~> 5.2.0"
 # Use Sass to process CSS
 gem "sassc-rails"
-
+gem 'faker'
+gem 'pry'
 gem "font-awesome-sass"
 gem 'htmlbeautifier'
 
@@ -58,6 +58,7 @@ gem 'htmlbeautifier'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
+  gem 'awesome_print'
 end
 
 group :development do
