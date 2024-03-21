@@ -54,34 +54,39 @@
               <i class="fa-solid fa-users"></i>
               Administradores
             <% end %>
-          </li>
-        </ul>
-        <hr>
-        <div class="dropdown">
-          <a href="#" class="d-flex gap-2 align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-solid fa-user"></i>
-            <strong><%= current_admin.email %></strong>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-            <li>
-              <%= link_to destroy_admin_session_path, class: "dropdown-item d-flex align-items-center justify-content-between", data: { "turbo-method": :delete } do %>
-                Sair <i class="fa-solid fa-right-from-bracket"></i>
+            <li class="nav-item">
+              <%= link_to admins_backoffice_subjects_path, class:"nav-link link-secondary text-white" do %>
+                <i class="fa-solid fa-book"></i>
+                Assuntos/Áreas
               <% end %>
-            </ul>
+            </li>
+          </ul>
+          <hr>
+          <div class="dropdown">
+            <a href="#" class="d-flex gap-2 align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user"></i>
+              <strong><%= current_admin.email %></strong>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+              <li>
+                <%= link_to destroy_admin_session_path, class: "dropdown-item d-flex align-items-center justify-content-between", data: { "turbo-method": :delete } do %>
+                  Sair <i class="fa-solid fa-right-from-bracket"></i>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <%= yield %>
           </div>
         </div>
-        <div class="container-fluid">
-          <%= yield %>
-        </div>
       </div>
-    </div>
-    <% if notice %>
-      <div class="notice">
-        <div class="alert alert-info alert-dismissible fade show" role="alert">
-          <%= notice %>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <% if notice %>
+        <div class="notice">
+          <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <%= notice %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </body>
-</html>
+      <% end %>
+    </body>
+  </html>
