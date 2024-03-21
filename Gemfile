@@ -51,7 +51,8 @@ gem 'faker'
 gem 'pry'
 gem "font-awesome-sass"
 gem 'htmlbeautifier'
-gem 'bootstrap-growl-rails', '~> 3.1', '>= 3.1.3'
+gem 'kaminari'
+gem 'kaminari-i18n'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
