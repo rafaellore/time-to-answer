@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-12 px-4 pt-4">
-    <h1 class="page-header">Listando Assuntos/Áreas</h1>
+    <h1 class="page-header">L<%= t('messages.listing', model: @subjects.model_name.human(count: 2)) %></h1>
     <hr/>
   </div>
 </div>
@@ -26,7 +26,7 @@
             <%= link_to edit_admins_backoffice_subject_path(subject), class:"btn btn-primary rounded-4" do %>
               <i class="fa fa-edit"></i>
             <% end %>
-            <%= link_to admins_backoffice_subject_path(subject), class:"btn btn-danger rounded-4", data: { "turbo-method": :delete, turbo_confirm: "Deseja realmente excluir esse assunto/área?" } do %>
+            <%= link_to admins_backoffice_subject_path(subject), class:"btn btn-danger rounded-4", data: { "turbo-method": :delete, turbo_confirm: t('messages.confirm_with', item: subject.description) } do %>
               <i class="fa fa-minus"></i>
             <% end %>
           </td>
