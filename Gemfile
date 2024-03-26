@@ -45,7 +45,6 @@ gem 'devise'
 gem 'rails-i18n',  '~> 7.0.0'
 gem 'tty-spinner'
 gem "bootstrap", "~> 5.2.0"
-# Use Sass to process CSS
 gem "sassc-rails"
 gem 'faker'
 gem 'pry'
@@ -53,6 +52,8 @@ gem "font-awesome-sass"
 gem 'htmlbeautifier'
 gem 'kaminari'
 gem 'kaminari-i18n'
+gem 'jquery-rails'
+gem "cocoon"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
