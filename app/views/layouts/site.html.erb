@@ -6,23 +6,55 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "application" %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "jquery" %>
   </head>
   <body>
-    <header class="d-flex justify-content-center py-3">
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-      </ul>
-    </header>
-    <div class="container my-5">
-      <div class="p-5 text-center bg-light rounded-3">
-        <h1 class="text-body-emphasis">Jumbotron with icon</h1>
-        <%= yield %>
+    <header class="d-flex justify-content-center py-3 bg-light border-bottom">
+      <div class="container d-flex flex-wrap">
+        <ul class="nav me-auto">
+          <li class="nav-item"><a href="#" class="nav-link link-dark px-2 active" aria-current="page">Time to Answer</a></li>
+        </ul>
+        <ul class="nav">
+          <% unless user_signed_in? %>
+            <li class="nav-item"><%= link_to 'Entrar', new_user_session_path, class: 'nav-link link-dark px-2' %></li>
+            <li class="nav-item"><%= link_to 'Cadastrar-se', new_user_registration_path, class: 'nav-link link-dark px-2' %></li>
+          <% else %>
+            <div class="dropdown">
+              <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-user"></i>
+                <strong><%= current_user.email %></strong>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                <li>
+                  <%= link_to users_backoffice_welcome_index_path, class: "dropdown-item d-flex align-items-center justify-content-between" do %>
+                    Perfil <i class="fa-solid fa-user"></i>
+                  <% end %>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <%= link_to destroy_user_session_path, class: "dropdown-item d-flex align-items-center justify-content-between", data: { "turbo-method": :delete } do %>
+                    Sair <i class="fa-solid fa-right-from-bracket"></i>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+          </ul>
+        </div>
+      </header>
+      <div class="container my-5">
+        <div class="p-5 text-center bg-light rounded-3">
+          <h1 class="text-body-emphasis">Jumbotron with icon</h1>
+          <%= yield %>
+        </div>
       </div>
-    </div>
-  </body>
-</html>
+      <% if notice %>
+        <div class="notice">
+          <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <%= notice %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        </div>
+      <% end %>
+    </body>
+  </html>
