@@ -1,10 +1,11 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   namespace :users_backoffice do
     get 'welcome/index'
   end
   devise_for :users
   namespace :site do
     get 'welcome/index'
+    get 'search', to: 'search#questions'
   end
   namespace :profiles_backoffice do
     get 'welcome/index'
