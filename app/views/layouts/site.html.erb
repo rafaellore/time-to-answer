@@ -43,10 +43,22 @@
         </div>
       </header>
       <div class="container my-5">
-        <div class="p-5 text-center bg-light rounded-3">
+        <div class="p-5 text-center bg-light rounded-3 mb-4">
           <h1 class="text-body-emphasis">Jumbotron with icon</h1>
-          <%= yield %>
+          <h1>Site::Welcome#index</h1>
+          <p>Find me in app/views/site/welcome/index.html.erb</p>
+          <% if user_signed_in? %>
+            <p>Usuário ESTÁ logado / <%= current_user.email %> </p>
+          <% else %>
+            <p>Usuário NÃO está logado</p>
+          <% end %>
+          <% if admin_signed_in? %>
+            <p>Administrador ESTÁ logado / <%= current_admin.email %> </p>
+          <% else %>
+            <p>Administrador NÃO está logado</p>
+          <% end %>
         </div>
+        <%= yield %>
       </div>
       <% if notice %>
         <div class="notice">
