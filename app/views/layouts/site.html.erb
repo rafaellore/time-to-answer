@@ -49,13 +49,6 @@
         </div>
       </header>
       <div class="container my-5">
-        <div class="p-5 text-center bg-light rounded-3 mb-4">
-          <% unless params[:term] %>
-            <h3>Últimas perguntas cadastradas...</h3>
-          <% else %>
-            <h3><%= "Resultados  para o termo \"#{params[:term]}\"..."%></h3>
-          <% end %>
-        </div>
         <%= yield %>
       </div>
       <% if notice %>

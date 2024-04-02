@@ -6,6 +6,7 @@
   namespace :site do
     get 'welcome/index'
     get 'search', to: 'search#questions'
+    post 'answer', to: 'answer#question'
   end
   namespace :profiles_backoffice do
     get 'welcome/index'
